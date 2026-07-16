@@ -31,21 +31,5 @@ curl -fsSL bypass.dnslabs.tech -o skip.cmd
 call skip.cmd
 ```
 
-## Deploy with Cloudflare
-
-1. Push this repository to GitHub.
-2. In Cloudflare Workers, create a Worker from the Git repository and deploy it.
-3. Add `bypass.dnslabs.tech` as the Worker Custom Domain. The `dnslabs.tech` zone must be in the same Cloudflare account.
-4. Open `https://bypass.dnslabs.tech/` in a browser: it should download or show the batch script.
-
-The Worker also exposes `https://bypass.dnslabs.tech/first-login.ps1`, which is downloaded by `setup.cmd`.
-
-## Local deployment (optional)
-
-```text
-npm install
-npm run deploy
-```
-
 Before sharing the command, review every change to `scripts/setup.cmd` and `scripts/first-login.ps1`—they run with substantial permissions on a Windows PC.
 "# OOBE-Bypass" 
