@@ -1,0 +1,12 @@
+{
+  "name": "cleanops-windows-setup",
+  "main": "src/index.js",
+  "compatibility_date": "2026-07-17",
+  "rules": [
+    {
+      "type": "Text",
+      "globs": ["**/*.cmd", "**/*.ps1"],
+      "fallthrough": false
+    }
+  ]
+}

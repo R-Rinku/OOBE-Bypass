@@ -1,0 +1,40 @@
+# CleanOps Windows setup
+
+A small Cloudflare Worker that serves a Windows OOBE helper from a short URL.
+
+## What it does
+
+- Sets the time zone to **India Standard Time** (UTC+05:30).
+- Sets the Windows region to **India** and culture to `en-IN`.
+- Enables the Windows OOBE offline-account path and restarts the computer.
+- At the first administrator sign-in, uses `winget` to install Brave, VLC, WhatsApp, and 7-Zip.
+
+It does not create an account or suppress every Windows setup screen. It keeps the remaining OOBE choices under the user's control.
+
+## User command during OOBE
+
+At the Windows setup screen, press `Shift` + `F10`, then run:
+
+```bat
+curl -fsSL bypass.dnslabs.tech -o skip.cmd
+call skip.cmd
+```
+
+## Deploy with Cloudflare
+
+1. Push this repository to GitHub.
+2. In Cloudflare Workers, create a Worker from the Git repository and deploy it.
+3. Add `bypass.dnslabs.tech` as the Worker Custom Domain. The `dnslabs.tech` zone must be in the same Cloudflare account.
+4. Open `https://bypass.dnslabs.tech/` in a browser: it should download or show the batch script.
+
+The Worker also exposes `https://bypass.dnslabs.tech/first-login.ps1`, which is downloaded by `setup.cmd`.
+
+## Local deployment (optional)
+
+```text
+npm install
+npm run deploy
+```
+
+Before sharing the command, review every change to `scripts/setup.cmd` and `scripts/first-login.ps1`—they run with substantial permissions on a Windows PC.
+"# OOBE-Bypass" 
