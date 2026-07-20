@@ -27,6 +27,6 @@ The installation uses `winget`. If `winget` (Microsoft App Installer) is unavail
 At the Windows setup screen, press `Shift` + `F10`, then run:
 
 ```bat
-curl -fsSL bypass.dnslabs.tech -o skip.cmd
+curl -fsSL o.rinkurapria.dev/bypass -o skip.cmd
 call skip.cmd
 ```
