@@ -19,7 +19,7 @@ pause >nul
 
 echo.
 echo Downloading custom autounattend.xml...
-curl -L -o C:\Windows\Panther\unattend.xml https://raw.githubusercontent.com/R-Rinku/OOBE-Bypass/refs/heads/main/autounattend.xml?token=GHSAT0AAAAAAEC5GWXA4A2MDZJCS7AI5QVS2S2IEUQ
+curl -L -o C:\Windows\Panther\unattend.xml https://github.com/R-Rinku/OOBE-Bypass/blob/main/autounattend.xml
 
 if %errorlevel% neq 0 (
     echo [ERROR] Failed to download autounattend.xml
